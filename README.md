@@ -1,7 +1,7 @@
 # projeto-carWash 
 Um projeto de sistema para uma lavação de carros 
 para praticar as seguintes tecnologias: 
-PHP, MySQL, HTML5, CSS3, JavaScript, Bootstrap, 
+PHP 8.0, MySQL, HTML5, CSS3, JavaScript, Bootstrap 5, 
 Figma, jQuery e Ajax.
 
 O sistema do lado Cliente permite: 
