@@ -1,0 +1,295 @@
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/assets/images/lindo-carro-no-servico-de-lavagem.jpg);
+    background-size: cover;
+    font-family: "Avenir Next", "Avenir", sans-serif;
+}
+
+.menuToggle {
+    position: fixed;
+    margin: 16px 0 0 50px;
+}
+
+.menuToggle input {
+    display: block;
+    width: 40px;
+    height: 36px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 10000;
+}
+
+.menuToggle span {
+    display: block;
+    width: 30px;
+    text-align: center;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #ffffff;
+    border-radius: 5px;
+    transform-origin: 1px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        opacity 0.55s ease;
+}
+
+.menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+.menuToggle input:checked~span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #8b8b8b;
+}
+
+
+.menuToggle input:checked~span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+.menuToggle input:checked~span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+.menuToggle input:checked~ul {
+    transform: none;
+}
+
+.nav-title {
+    color: white;
+    font-size: 12px;
+    margin: 25% 0 0 5%;
+}
+
+.nav-button {
+    padding: 3.6% 0%;
+    width: 90%;
+    margin: auto;
+}
+
+.nav-button button {
+    width: 100%;
+    border: #00E0FF 1px solid;
+    border-radius: 5px;
+    background-color: #060524;
+    color: white;
+    height: 38px;
+    font-size: 16px;
+    text-align: start;
+    padding-left: 5%;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.nav-button button:hover {
+    background-color: rgba(206, 206, 206, 0.3);
+    ;
+}
+
+.offcanvas,
+offcanvas-start {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: none;
+    color: #FFF;
+    backdrop-filter: blur(0.2rem);
+    height: 100%;
+
+}
+
+.nav-button-exit {
+    margin-top: 52%;
+    padding: 3.6% 0%;
+    width: auto;
+}
+
+.nav-button-exit button {
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    height: 2.5rem;
+    width: 4rem;
+    margin: -30% 0 0 5%;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    cursor: pointer;
+    transition: all 0.4s;
+    background-color: rgba(219, 38, 41, 0.35);
+}
+
+.nav-button-exit button:hover {
+    background-color: rgba(219, 38, 41, 1);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #8b8b8b;
+    width: 100%;
+    height: 100%;
+    margin: 1% 0 1% 23%;
+    background-color: transparent;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 5% auto auto auto !important;
+    }
+
+    #tela1,
+    #tela2,
+    #tela3,
+    #tela4 {
+        width: 100% !important;
+        margin: 2% 0 !important;
+    }
+
+    .accordion {
+        margin-top: 30% !important;
+        z-index: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        margin: 5% auto auto auto !important;
+
+    }
+}
+
+.telas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: #00E0FF 1px solid;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #FFFF;
+    backdrop-filter: blur(0.2rem);
+}
+
+#tela1 {
+    width: 49%;
+    height: 55%;
+}
+
+#tela2 {
+    width: 49%;
+    height: 55%;
+    margin: 0 0 0 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 10%;
+}
+
+#tela2 label {
+    margin: 6% 0;
+}
+
+#tela3 {
+    width: 60%;
+    height: 42%;
+    margin: 2% 0 0 0;
+}
+
+#tela4 {
+    width: 38%;
+    height: 42%;
+    margin: 2% 0 0 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+#tela4 h2 {
+    margin-bottom: 1%;
+}
+
+#tela4 span {
+    margin-bottom: 3%;
+    font-size: 20px;
+    color: greenyellow;
+    font-weight: bold;
+}
+
+.resultado-tela1 {
+    display: flex;
+    width: 70%;
+}
+
+.color {
+    width: 20px;
+    height: 20px;
+    margin: 6% 6% 0 0;
+    border-radius: 20px;
+}
+
+.container-detail {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #8b8b8b;
+    width: 75%;
+    height: auto;
+    padding: 1%;
+    margin: 2% 0 1% 23%;
+    background-color: transparent;
+    border: #00E0FF 1px solid;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #FFFF;
+    backdrop-filter: blur(0.2rem);
+}
+
+.container-detail-table {   
+    background-color: #8b8b8b;
+    width: 75%;
+    height: auto;
+    padding: 1%;
+    margin: 2% 0 2% 23%;
+    background-color: transparent;
+    border: #00E0FF 1px solid;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #FFFF;
+    backdrop-filter: blur(0.2rem);
+}
+
+.container-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8b8b8b;
+    width: 60%;
+    height: 100%;
+    padding: 1%;
+    margin: 1% 0 1% 30%;
+    border: #00E0FF 1px solid;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #FFFF;
+}
+
+.accordion-button {
+    font-size: 25px;
+    color: #FFF;
+    background-color: #060524;
+    border: 1px solid #00E0FF;
+    border-radius: 5px;
+}
