@@ -5,25 +5,26 @@
 ?>
 
 <div class="container-detail">
+<h1 class='title'>AGENDE SEU HORÁRIO</h1>
 <form class="row g-3 needs-validation" action="../config/cadastro_agendamento.php" method="POST" novalidate>
 <div class="col-md-3">
     <label for="carro" class="form-label">Carro</label>
     <select class="form-select" id="carro" name="carro" required>
     <option selected disabled value="">Selecione</option>
         <?php 
-            $id = $_SESSION['id'];
-            $id = 1;
-            $sql = "SELECT id_car, modelo, ano, tipo, placa FROM carros
-            WHERE id_user = '" . $id . "';";
-            $result_car = mysqli_query($conn, $sql);
-            while ($car = mysqli_fetch_array($result_car)) {
-                ?>
+          $id = $_SESSION['id'];
+          $sql = "SELECT id_car, modelo, ano, tipo, placa FROM carros
+          WHERE id_user = '" . $id . "'";
+          $result_car = mysqli_query($conn, $sql);
+          while ($car = mysqli_fetch_array($result_car)) {
+
+              ?>
                 <option value="<?php echo $car[0]; ?>"><?php echo $car[1] . " " . $car[3] . " " . $car[2] . " - " . $car[4]; ?></option>
-                <?php
-            }
+              <?php
+            
+          }
         ?>
     </select>
-    
   </div>
   <div class="col-md-3">
     <label for="func" class="form-label">Funcionario</label>
@@ -41,7 +42,6 @@
     </select>
     
   </div>
-  
   <div class="col-md-2">
     <label for="data" class="form-label">Data</label>
     <input type="date" class="form-control" id="data" name="data" required>
@@ -60,8 +60,7 @@
               <option value="<?php echo $hora[0]; ?>"><?php echo $hora[0]; ?></option>
               <?php
             }
-            ?>
-            
+            ?>  
           
     </select>
     

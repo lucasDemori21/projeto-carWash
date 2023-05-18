@@ -22,14 +22,10 @@ if ($_POST) {
     
     $verify = mysqli_fetch_array($plate_v);
 
-    print_r($verify);
-
-    if(!in_array($plate, $verify)){    
-
+    if(!in_array($plate, $verify)){       
         $sql = "INSERT INTO carros (id_user, modelo, marca, ano, tipo, porte, placa) 
         VALUES('" . $id_user . "', '" . $model . "', '" . $mark . "' ,
         '" . $year . "', '" . $type . "', '" . $porte . "', '" . $plate . "');";
-        
         $result = mysqli_query($conn, $sql);
         header('Location: ../view/config.php?status=1');
         exit;

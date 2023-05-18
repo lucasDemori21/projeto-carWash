@@ -22,7 +22,7 @@ if(!$_SESSION['username'] && !$_SESSION['id']){
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
-
+    <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script> 
     
 </head>
 <body style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../assets/images/lindo-carro-no-servico-de-lavagem.jpg); background-size: cover;">
@@ -50,7 +50,7 @@ if(!$_SESSION['username'] && !$_SESSION['id']){
               <svg style="margin-right: 7%; margin-top: 1%; float: left; width: 22px; height: 22px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
                 <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
               </svg>
-                <div style="padding-top: 1%;">Workspace</div>
+                <div style="padding-top: 1%;">Gerenciador de agendamentos</div>
               </button>
             </a>
           </div>
@@ -128,7 +128,7 @@ if(!$_SESSION['username'] && !$_SESSION['id']){
           </div>
           <?php
           }
-          if($_SESSION['permissao'] == 1){
+          //if($_SESSION['permissao'] == 1){
           ?>
           <div class="nav-button">
             <a href="cadastro_func.php">
@@ -137,12 +137,12 @@ if(!$_SESSION['username'] && !$_SESSION['id']){
                   <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
                   <path d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z"/>
                 </svg>
-                <div style="padding-top: 1%;">Cadastrar funcionario</div>
+                <div style="padding-top: 1%;">Cadastrar Funcionario / Cliente</div>
               </button>
             </a>
           </div>
           <?php
-          }
+          //}
           ?>
           <div class="nav-button-exit">
   <button onclick="return confirmLogout()">Sair</button>

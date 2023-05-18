@@ -4,6 +4,7 @@ require_once 'header.php';
 if ($_SESSION['permissao'] == 1){
 ?>
 <div class="container-detail-table">
+    <h1 class="title">GERENCIADOR DE AGENDAMENTOS</h1>
 <table id="tableServ" class="table table-responsive" style="width:100%; color: white;">
         <thead>
             

@@ -103,7 +103,9 @@ if( $_SESSION['permissao'] == 1){
 ?>
 
 <div class="container-detail">
+<h1 class='title'>CADASTRE SEU VEÍCULO</h1>
     <form class="row g-3 needs-validation" action="../config/cadastro_veiculo.php" method="POST" novalidate>
+    <input type="hidden" id='cliente' name='cliente' value='<?php echo $_SESSION['id'];?>'>
   <div class="col-md-4">
     <label for="model" class="form-label">Modelo</label>
     <input type="text" class="form-control" id="model" name="model" placeholder="Ex: Gol" required>

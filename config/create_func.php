@@ -30,17 +30,17 @@ $sts = $_POST['sts'];
 
 $sql = "INSERT INTO funcionarios(
     id_func, nome_func, email, data_nasc, idade,
-    cpf, funcao, salario, senha, cep, endereco,
+    cpf, funcao, salario, senha, cep, endereco, number_home,
      celular, telefone, bairro, cidade, estado, data_emissao, permissao, sts)
     VALUES (null, '".$username."', '".$email."',
      '".$data_nasc."', '".$idade."', '".$cpf."',
      '".$funcao."', '".$salario."', '".$update_pass."',
-     '".$zip."', '".$address."', '".$cellphone."', '".$telephone."',
+     '".$zip."', '".$address."', '".$number."', '".$cellphone."', '".$telephone."',
      '".$district."', '".$city."', '".$state."',
      '".$data_emissao."', '".$permissao."', '".$sts."')";
 
  if($result = mysqli_query($conn, $sql)){
-      header('Location: ../view/cadastro_func.php?Status=1');
+      //header('Location: ../view/cadastro_func.php?Status=1');
      echo $sql;
  }
 

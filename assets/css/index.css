@@ -11,6 +11,11 @@ body {
     font-family: "Avenir Next", "Avenir", sans-serif;
 }
 
+.title{
+    font-weight: bold;
+    margin: 1%;
+}
+
 .menuToggle {
     position: fixed;
     margin: 16px 0 0 50px;
