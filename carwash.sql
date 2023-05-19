@@ -17,7 +17,7 @@ district varchar(100),
 city varchar(100),
 state varchar(2),
 zip varchar(10), 
-data_reg date,
+data_reg datetime,
 sts int);
 
 CREATE TABLE carros(
@@ -62,6 +62,7 @@ salario decimal(10,2),
 senha varchar(150),
 cep varchar(20),
 endereco varchar(100),
+number_home varchar(20),
 celular varchar(45),
 telefone varchar(45),
 bairro varchar(100),
@@ -70,8 +71,6 @@ estado varchar(2),
 data_emissao date,
 permissao int,
 sts int);
-
-
 
 CREATE TABLE servicos(
 id_servico int NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -82,11 +81,6 @@ valor decimal(10,2),
 tempo_servico varchar(50),
 CONSTRAINT fkserv FOREIGN KEY (id_func)
 REFERENCES funcionarios (id_func));
-
-INSERT INTO servicos(id_servico, id_func, cod_serv, servico, valor, tempo_servico) VALUES 
-(null, 1, 10,'Lavação completa e enceramento', '49.90', 30),
-(null, 1, 20,'Higienização e Lavação completa', '89.90', 60),
-(null, 1, 30,' Ducha', '19.90', 10);
 
 CREATE TABLE  agendamento(
 id_agendamento int NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -104,7 +98,12 @@ id_data int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 data_disp DATE,
 hora_disp TIME);
 
-SELECT * FROM horarios_disp;
+
+
+
+
+
+
 
 INSERT INTO horarios_disp(id_data, data_disp, hora_disp) VALUES
 (null, '2023-05-03', '07:00'),
@@ -133,26 +132,20 @@ INSERT INTO horarios_disp(id_data, data_disp, hora_disp) VALUES
 (null, '2023-05-03', '18:30');
 
 
+INSERT INTO usuarios (id_user, cpf, data_nasc, idade, username, email, pass_key, 
+cellphone, telephone, address, number_home, complement, district, city, state, zip, 
+data_reg, sts) VALUES(null,'111.111.111-11', '2004-01-01','19', 'Lucas TESTE', 
+'lucas@gmail.com', '$2y$10$vNCgLuOiTEo1m/xSea3Ke..GSdPEKcWkWJ4phTnmYz12TRAECLBz2',
+'(99) 99999-9999', '(44) 4444-4444','Rua Claudio Lopes','1200','Casa', 'Aventureiro',
+'Joinville','SC','89225-721', '2023-05-19 15:56:05', '0');
 
-SELECT data_disp, hora_disp FROM horarios_disp;
-
-SELECT * FROM usuarios;
-
-SELECT * FROM carros;
-
-SELECT * FROM agendamento;
-
-SELECT * FROM servicos;
-
-SELECT * FROM funcionarios;
-
-
-SELECT * FROM funcionarios WHERE email = 'admin@admin.com';
-SELECT * FROM usuarios WHERE email = 'admin@admin.com';
-
-
-
-
+INSERT INTO funcionarios( id_func, nome_func, email, data_nasc, idade, cpf, funcao, 
+salario, senha, cep, endereco, number_home, celular, telefone, bairro, cidade, 
+estado, data_emissao, permissao, sts) VALUES (null, 'Admin', 'admin@admin.com', 
+'2001-01-01', '22', '118.972.429-48', 'Recursos Humanos', '20000.00', 
+'$2y$10$m29XYU4qb5Mog11RKP.cyeL/KtngOBdAzJ22Q45iFXGMmdBuU77QG', 
+'89225-721', 'Rua Claudio Lopes', '1281', '(47) 99635-6349', '(47) 3227-6855', 
+'Aventureiro', 'Joinville', 'SC', '2023-05-19', '1', '1');
 
 INSERT INTO carros (id_car, id_user, modelo, marca, ano, tipo, porte, placa) VALUES(null, 1, 'Gol ', 'Volkswagen' , '2020', 'Hatch', 'Médio', 'SL34SSE3');
 
@@ -160,6 +153,11 @@ INSERT INTO agendamento values(null, 1, 1, 1, 1, '2023-05-03', '7:00:00', 0);
 INSERT INTO agendamento values(null, 1, 1, 1, 1, '2023-05-03', '8:00:00', 0);
 INSERT INTO agendamento values(null, 1, 1, 1, 1, '2023-05-03', '9:00:00', 0);
 INSERT INTO agendamento values(null, 1, 1, 1, 1, '2023-05-03', '10:00:00', 0);
+
+INSERT INTO servicos(id_servico, id_func, cod_serv, servico, valor, tempo_servico) VALUES 
+(null, 1, 10,'Lavação completa e enceramento', '49.90', 30),
+(null, 1, 20,'Higienização e Lavação completa', '89.90', 60),
+(null, 1, 30,' Ducha', '19.90', 10);
 
 
 SELECT u.username, f.nome_func, c.modelo, s.servico, a.data_agen, a.status FROM agendamento AS a
@@ -172,6 +170,14 @@ SELECT u.username, f.nome_func, c.modelo, s.servico, a.data_agen, a.status FROM 
             INNER JOIN carros AS c
             ON a.id_car = c.id_car;
             
+SELECT * FROM usuarios;
+SELECT * FROM carros;
+SELECT * FROM agendamento;
+SELECT * FROM servicos;
+SELECT * FROM funcionarios;
+SELECT * FROM horarios_disp;
+SELECT * FROM dados_empresa;
+
             
             
             
