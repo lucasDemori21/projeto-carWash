@@ -7,6 +7,9 @@
 <div class="container-detail">
 <h1 class='title'>AGENDE SEU HORÁRIO</h1>
 <form class="row g-3 needs-validation" action="../config/cadastro_agendamento.php" method="POST" novalidate>
+  <div class="register-link">
+    <a href="config.php">Não possui seu veículo cadastrado? Clique aqui e cadastre já!</a>
+  </div>
 <div class="col-md-3">
     <label for="carro" class="form-label">Carro</label>
     <select class="form-select" id="carro" name="carro" required>
@@ -96,13 +99,79 @@
     <button class="btn btn-primary" type="submit">Agendar Horario</button>
   </div>
  <input type="hidden" value="<?php if (isset($_GET['disponivel']) && $_GET['disponivel'] == 1) { echo $_GET['disponivel']; }?>" id="disp">
+ <input type="hidden" id="login" value="<?php if($_GET){ echo @$_GET['login']; }?>"/>
 </form>
+</div>
+<div class="container-detail-table">
+<table id="table" class="table" style="width:100%; color: white;">
+
+    <thead>
+      <tr>
+        <th>Cliente</th>
+        <th>Veículo</th>
+        <th>Serviço</th>
+        <th>Data</th>
+        <th>Horário</th>
+        <th>####</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 </body>
 
 </html>
 
 <script>
+
+
+$(document).ready(function () {
+  $('#table').DataTable({
+    paging: false,
+    ordering: false,
+    info: false,
+    searching: false,
+    dom: '<"toolbar">frtip',
+  });
+  $('div.toolbar').html('<h3>Seus agendamentos</h3>');
+});
+
+
+ var sts = document.getElementById('login').value;
+    if(sts == 2) {
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Login realizado com sucesso!',
+            showConfirmButton: false,
+            timer: 2000
+        })
+    }
 if(document.getElementById('disp').value == 1){
   Swal.fire({
     position: 'center',

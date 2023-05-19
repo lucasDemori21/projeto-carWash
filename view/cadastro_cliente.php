@@ -15,8 +15,8 @@ $dados_user = mysqli_fetch_array($result);
     ?>
     
     <div class="container-detail">
-    <h1 class='title'>CADASTRO DE FUNCIONÁRIO</h1>
-    <form class="row g-3 needs-validation" action="../config/create_func.php" method="POST" novalidate>
+    <h1 class='title'>CADASTRO DE CLIENTE</h1>
+    <form class="row g-3 needs-validation" action="../config/cadastro_cliente.php" method="POST" novalidate>
     <div class="col-md-6">
       <label for="inputEmail" class="form-label">EMAIL</label>
       <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="example@carwash.com" required>
@@ -68,6 +68,10 @@ $dados_user = mysqli_fetch_array($result);
       <input type="text" class="form-control" id="inputNumber" placeholder="   1234" name="inputNumber" aria-describedby="validationServer03Feedback" required>
     </div>
     <div class="col-md-3">
+      <label for="inputComplement" class="form-label">COMPLEMENTO</label>
+      <input type="text" class="form-control" id="inputComplement" placeholder="Apartment, studio, or floor" name="inputComplement" value="" aria-describedby="validationServer03Feedback" required>
+    </div>
+    <div class="col-md-3">
       <label for="inputDistrict" class="form-label">BAIRRO</label>
       <input type="text" class="form-control" id="inputDistrict" name="inputDistrict" aria-describedby="validationServer03Feedback" required>
     </div>
@@ -114,29 +118,6 @@ $dados_user = mysqli_fetch_array($result);
         <option value="TO">TO</option>
       </select>
     </div>
-    <div class="col-md-3">
-      <label for="inputFunc" class="form-label">FUNÇÃO</label>
-      <select class="form-select" id="inputFunc" name="inputFunc" aria-describedby="validationServer04Feedback" required>
-        <option value="" disabled>Selecione</option>
-        <option value="Recursos Humanos">Recursos Humanos</option>
-        <option value="Encerador">Encerador</option>
-        <option value="Lavador">Lavador</option>
-        <option value="Gestor">Gestor</option>
-      </select>
-    </div>
-    <div class="col-md-3">
-      <label for="inputSalario" class="form-label">SALARIO</label>
-      <input type="text" class="form-control" id="inputSalario" name="inputSalario" placeholder="R$ 1.000,00" aria-describedby="validationServer05Feedback" required>
-    </div>
-    <div class="col-md-3">
-      <label for="permissao" class="form-label">PERMISSÃO</label>
-      <select class="form-select" id="permissao" name="permissao" aria-describedby="validationServer04Feedback" required>
-        <option value="" disabled>Selecione</option>
-        <option value="1">Sim</option>
-        <option value="2">Não</option>
-      </select>
-    </div>
-
     <div class="col-12">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
@@ -148,9 +129,9 @@ $dados_user = mysqli_fetch_array($result);
         </div>
       </div>
     </div>
-    <input type="hidden" id='sts' name='sts' value="1">
+    <input type="hidden" id='sts' name='sts' value="0">
     <div class="col-12">
-      <button class="btn btn-primary" type="submit">CADASTRAR CLIENTE</button>
+      <button class="btn btn-primary" type="submit">Cadastrar funcionario</button>
     </div>
   </form>
 </div>
@@ -158,19 +139,26 @@ $dados_user = mysqli_fetch_array($result);
 
 </html>
 
-<?php if (isset($_GET['Status']) && $_GET['Status'] == 1) { ?>
+<?php if (isset($_GET['cadastro']) && $_GET['cadastro'] == 1) { ?>
         <script>
             Swal.fire({
-            title: 'Cadastro de funcionario realizado com sucesso!',
+            title: 'Cadastro de cliente realizado com sucesso!',
             icon: 'success',
             timer: 0
             });
+        </script>
+<?php }else if (isset($_GET['cadastro']) && $_GET['cadastro'] == 2){ ?>
+        <script>
+                Swal.fire({
+                title: 'Erro ao fazer cadastro do cliente!',
+                icon: 'error',
+                timer: 3000
+                });
         </script>
 <?php } ?>
 
 
 <script>
-  $('#inputSalario').mask('#.##0,00', {reverse: true});
   (() => {
     'use strict'
     const forms = document.querySelectorAll('.needs-validation')

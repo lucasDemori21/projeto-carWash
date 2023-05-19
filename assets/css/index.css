@@ -20,6 +20,17 @@ body {
     position: fixed;
     margin: 16px 0 0 50px;
 }
+.register-link a{
+    margin-left: 1%;
+    color: rgb(199, 197, 197);
+    transition: all 0.4s;
+    font-weight: 600;
+    font-size: 16px;
+
+}
+.register-link a:hover{
+    color: rgb(255, 255, 255);
+}
 
 .menuToggle input {
     display: block;

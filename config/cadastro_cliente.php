@@ -12,7 +12,7 @@ $idade = $_POST['idade'];
 $cellphone = $_POST['inputCellphone'];
 $telephone = $_POST['inputTelephone'];
 $update_pass = @$_POST['inputPassword'];
-$password = password_hash($password, PASSWORD_DEFAULT);
+$password = password_hash($update_pass, PASSWORD_DEFAULT);
 $zip = $_POST['inputZip'];
 $address = $_POST['inputAddress'];
 $number = $_POST['inputNumber'];
@@ -33,10 +33,11 @@ $status = 0;
         '" . $data_registro . "', '" . $status . "')";
 
         $result = mysqli_query($conn, $sql);
-        header("Location: ../view/cadastro_func.php?login=1");
+        header("Location: ../view/cadastro_cliente.php?cadastro=1");
+        echo $sql;
         exit;
     }else{  
-        header('Location: ../login.php?Erro=2');
+        header("Location: ../view/cadastro_cliente.php?cadastro=2");
         exit;
     }
 

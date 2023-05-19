@@ -23,7 +23,8 @@ $city = $_POST['inputCity'];
 $state = $_POST['inputState'];
 $zip = $_POST['inputZip'];
 $funcao = $_POST['inputFunc'];
-$salario = $_POST['inputSalario'];
+$salario = str_replace(".", "", $_POST['inputSalario']);
+$salario = str_replace(",", ".", $salario);
 $permissao = $_POST['permissao'];
 $data_emissao = date('Y-m-d');
 $sts = $_POST['sts'];
@@ -39,10 +40,10 @@ $sql = "INSERT INTO funcionarios(
      '".$district."', '".$city."', '".$state."',
      '".$data_emissao."', '".$permissao."', '".$sts."')";
 
- if($result = mysqli_query($conn, $sql)){
-      //header('Location: ../view/cadastro_func.php?Status=1');
+  if($result = mysqli_query($conn, $sql)){
+       header('Location: ../view/cadastro_func.php?Status=1');
      echo $sql;
- }
+  }
 
 
 

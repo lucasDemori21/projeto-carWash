@@ -21,7 +21,7 @@ if(!empty($_POST))
         VALUES(null,'".$username."','".$email."','".$hash_pass."', '".$data_registro."', '".$sts."');";
         $_SESSION['username'] = $username;
         $result = mysqli_query($conn, $sql);
-        header("Location: ../index.php?login=1");
+        header("Location: ../login.php?login=1");
         exit;
     }else{  
         header('Location: ../login.php?Erro=2');
