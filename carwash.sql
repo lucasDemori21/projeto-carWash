@@ -132,6 +132,8 @@ INSERT INTO horarios_disp(id_data, data_disp, hora_disp) VALUES
 (null, '2023-05-03', '18:30');
 
 
+
+
 INSERT INTO usuarios (id_user, cpf, data_nasc, idade, username, email, pass_key, 
 cellphone, telephone, address, number_home, complement, district, city, state, zip, 
 data_reg, sts) VALUES(null,'111.111.111-11', '2004-01-01','19', 'Lucas TESTE', 
