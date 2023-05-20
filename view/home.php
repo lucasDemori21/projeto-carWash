@@ -107,101 +107,53 @@
 
     <thead>
       <tr>
-        <th>Cliente</th>
-        <th>Veículo</th>
-        <th>Serviço</th>
-        <th>Data</th>
-        <th>Horário</th>
-        <th>####</th>
+      <th>Cliente</th>
+                <th>Responsavel</th>
+                <th>Modelo</th>
+                <th>Serviço</th>
+                <th>Data</th>
+                <th>Horario</th>
+                <th>Status</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-        <td>6</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-        <td>6</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-        <td>6</td>
-      </tr>
+    <?php
+            $id = $_SESSION['id'];
+            $i = 0;
+            $sql = 'SELECT id_agendamento, u.username, f.nome_func, c.modelo, s.servico, a.data_agen, hora_disp, a.status FROM agendamento AS a
+            INNER JOIN funcionarios AS f
+            ON a.id_func = f.id_func
+            INNER JOIN usuarios AS u
+            ON a.id_user = u.id_user
+            INNER JOIN servicos AS s
+            ON a.id_servico = s.id_servico
+            INNER JOIN carros AS c
+            ON a.id_car = c.id_car
+            WHERE status = 0';
+            $result = mysqli_query($conn, $sql);
+            while($ag = mysqli_fetch_array($result)){
+                
+                ?>
+                <input type="hidden" id='user-<?php echo $i;?>' value="<?php echo $ag[0];?>">
+                <td><?php echo $ag[1];?></td>
+                <td><?php echo $ag[2];?></td>
+                <td><?php echo $ag[3];?></td>
+                <td><?php echo $ag[4];?></td>
+                <td><?php echo date('d/m/Y', strtotime($ag[5]));?></td>
+                <td><?php echo $ag[6]; ?></td>
+                <td>
+                Agendado
+                </td>
+                
+                <?php
+            echo '</tr>';
+            $i++;
+            }
+            ?>
     </tbody>
   </table>
 </div>
 </body>
-
 </html>
-
-<script>
-
-
-$(document).ready(function () {
-  $('#table').DataTable({
-    paging: false,
-    ordering: false,
-    info: false,
-    searching: false,
-    dom: '<"toolbar">frtip',
-  });
-  $('div.toolbar').html('<h3>Seus agendamentos</h3>');
-});
-
-
- var sts = document.getElementById('login').value;
-    if(sts == 2) {
-        Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Login realizado com sucesso!',
-            showConfirmButton: false,
-            timer: 2000
-        })
-    }
-if(document.getElementById('disp').value == 1){
-  Swal.fire({
-    position: 'center',
-    icon: 'success',
-    title: 'Agendamento concluído!',
-    showConfirmButton: false,
-    timer: 2000
-  })
-}
-if(document.getElementById('disp').value == 2){
-  Swal.fire({
-    position: 'center',
-    icon: 'warning',
-    title: 'Horario indisponivel!',
-    showConfirmButton: false,
-    timer: 2000
-  })
-}
-
-    (() => {
-  'use strict'
-  const forms = document.querySelectorAll('.needs-validation')
-  Array.from(forms).forEach(form => {
-    form.addEventListener('submit', event => {
-      if (!form.checkValidity()) {
-        event.preventDefault()
-        event.stopPropagation()
-      }
-      form.classList.add('was-validated')
-    }, false)
-  })
-  })()
+<script src="../assets/js/agendamento.js">
 </script>

@@ -56,7 +56,7 @@ require_once "config/conexao.php";
                             <h3>Informações de contato</h3>
                             <p>Horário de atendimento: Segunda - Sexta das 08:30h às 18h</p>
                             <p>Telefone: (47) 3333-3333</p>
-                            <p>Whatsapp: (47) 9 9999-9999</p>
+                            <p>Whatsapp: <a href="https://wa.link/n9gqxm" target='blank'> (47) 9 9635-6349</a></p>                 
                             <p>Email: contato@carwash.com</p>
                         </div>
                         <div class="modal-footer">
@@ -193,37 +193,4 @@ require_once "config/conexao.php";
 <input type="hidden" id="login" value="<?php if($_GET){ echo @$_GET['login']; }?>"/>
 </body>
 </html>
-<script>
-
-    var erro = document.getElementById('erro').value; 
-    if(erro == 1){
-        document.getElementById('incorrect').style.display = "block";
-    }
-    if(erro == 2) {
-        document.getElementById('used').style.display = "block";
-    }
-    if(erro == 3) {
-        document.getElementById('notRegistered').style.display = "block";
-    }
-    var sts = document.getElementById('login').value;
-    if(sts == 1) {
-        Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Cadastro realizado com sucesso!',
-            text: 'Faça o login para continuar.',
-            showConfirmButton: false,
-            timer: 3000
-        })
-    }
-
-    loginButton.onclick = function () {
-        document.querySelector("#flipper").classList.toggle("flip");
-    }
-
-    registerButton.onclick = function () {
-        document.querySelector("#flipper").classList.toggle("flip");
-    } 
-
-
-</script>
+<script src="assets/js/login.js"></script>

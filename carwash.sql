@@ -92,17 +92,10 @@ data_agen date,
 hora_disp time,
 status int);
 
-
 CREATE TABLE horarios_disp(
 id_data int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 data_disp DATE,
 hora_disp TIME);
-
-
-
-
-
-
 
 
 INSERT INTO horarios_disp(id_data, data_disp, hora_disp) VALUES
@@ -131,9 +124,6 @@ INSERT INTO horarios_disp(id_data, data_disp, hora_disp) VALUES
 (null, '2023-05-03', '18:00'),
 (null, '2023-05-03', '18:30');
 
-
-
-
 INSERT INTO usuarios (id_user, cpf, data_nasc, idade, username, email, pass_key, 
 cellphone, telephone, address, number_home, complement, district, city, state, zip, 
 data_reg, sts) VALUES(null,'111.111.111-11', '2004-01-01','19', 'Lucas TESTE', 
@@ -160,27 +150,7 @@ INSERT INTO servicos(id_servico, id_func, cod_serv, servico, valor, tempo_servic
 (null, 1, 10,'Lavação completa e enceramento', '49.90', 30),
 (null, 1, 20,'Higienização e Lavação completa', '89.90', 60),
 (null, 1, 30,' Ducha', '19.90', 10);
-
-
-SELECT u.username, f.nome_func, c.modelo, s.servico, a.data_agen, a.status FROM agendamento AS a
-            INNER JOIN funcionarios AS f
-            ON a.id_func = f.id_func
-            INNER JOIN usuarios AS u
-            ON a.id_user = u.id_user
-            INNER JOIN servicos AS s
-            ON a.id_servico = s.id_servico
-            INNER JOIN carros AS c
-            ON a.id_car = c.id_car;
-            
-SELECT * FROM usuarios;
-SELECT * FROM carros;
-SELECT * FROM agendamento;
-SELECT * FROM servicos;
-SELECT * FROM funcionarios;
-SELECT * FROM horarios_disp;
-SELECT * FROM dados_empresa;
-
-            
+   
             
             
             
