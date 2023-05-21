@@ -8,7 +8,7 @@
 <h1 class='title'>AGENDE SEU HORÁRIO</h1>
 <form class="row g-3 needs-validation" action="../config/cadastro_agendamento.php" method="POST" novalidate>
   <div class="register-link">
-    <a href="config.php">Não possui seu veículo cadastrado? Clique aqui e cadastre já!</a>
+    <a href="cadastro_veiculo.php">Não possui seu veículo cadastrado? Clique aqui e cadastre já!</a>
   </div>
 <div class="col-md-3">
     <label for="carro" class="form-label">Carro</label>

@@ -19,13 +19,13 @@ if($_POST){
     while($verify = mysqli_fetch_array($resultVerify)){
         if(($verify[0] == $data) && ($verify[1] == $hora)){
             echo 'Horario indisponivel!';
-            header('Location: ../view/home.php?disponivel=2');        
+            header('Location: ../view/agendamento.php?disponivel=2');        
             exit;
         }
     }
     $sql = "INSERT INTO agendamento(id_agendamento, id_user,id_car, id_func, id_servico, data_agen, hora_disp, status) VALUES
             (null, '" . $id_user . "', '" . $carro . "', '" . $func . "', '" . $servico . "', '" . $data . "', '" . $hora . "', " . $status . ");";
     $result = mysqli_query($conn, $sql);
-    header('Location: ../view/home.php?disponivel=1'); 
+    header('Location: ../view/agendamento.php?disponivel=1'); 
     exit;
 }

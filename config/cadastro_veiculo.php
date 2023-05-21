@@ -27,10 +27,10 @@ if ($_POST) {
         VALUES('" . $id_user . "', '" . $model . "', '" . $mark . "' ,
         '" . $year . "', '" . $type . "', '" . $porte . "', '" . $plate . "');";
         $result = mysqli_query($conn, $sql);
-        header('Location: ../view/config.php?status=1');
+        header('Location: ../view/cadastro_veiculo.php?status=1');
         exit;
     }else{
-        header('Location: ../view/config.php?status=2');
+        header('Location: ../view/cadastro_veiculo.php?status=2');
         exit;
     }
     

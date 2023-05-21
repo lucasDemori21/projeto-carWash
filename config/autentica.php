@@ -21,7 +21,7 @@ if (!empty($verifica) && ($verifica[17] == 0)) {
             $_SESSION['id'] = $verifica[0];
             $_SESSION['permissao'] = $verifica2[17];
             $_SESSION['username'] = $verifica[4];
-            header('Location: ../view/home.php?login=2');
+            header('Location: ../view/agendamento.php?login=2');
         } else {
             $erro = 1;
             header('Location: ../login.php?Erro=' . $erro);
@@ -40,7 +40,7 @@ if ($verifica2[18] == 1) {
         if (password_verify($password, $verifica2[8])) {
             $_SESSION['id'] = $verifica2[0];
             $_SESSION['permissao'] = $verifica2[18];
-            $_SESSION['username'] = $verifica2[1] . " Admin";
+            $_SESSION['username'] = $verifica2[1];
             header('Location: ../index.php?login=2');
         } else {
             echo '2';
