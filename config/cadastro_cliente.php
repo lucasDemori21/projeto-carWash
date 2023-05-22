@@ -11,8 +11,7 @@ $data_nasc = $_POST['dateN'];
 $idade = $_POST['idade'];
 $cellphone = $_POST['inputCellphone'];
 $telephone = $_POST['inputTelephone'];
-$update_pass = @$_POST['inputPassword'];
-$password = password_hash($update_pass, PASSWORD_DEFAULT);
+$password = password_hash($_POST['inputPassword'], PASSWORD_DEFAULT);
 $zip = $_POST['inputZip'];
 $address = $_POST['inputAddress'];
 $number = $_POST['inputNumber'];
@@ -22,6 +21,11 @@ $city = $_POST['inputCity'];
 $state = $_POST['inputState'];
 $data_registro = date('Y-m-d H:i:s');
 $status = 0;
+
+
+
+
+
     if($email){
         $sql = "INSERT INTO usuarios (id_user, cpf, data_nasc, idade, 
         username, email, pass_key, cellphone, telephone, address, 
@@ -40,10 +44,5 @@ $status = 0;
         header("Location: ../view/cadastro_cliente.php?cadastro=2");
         exit;
     }
-
-
-
-
-
 
 ?>

@@ -29,7 +29,7 @@ require_once 'header.php';
         <div class="accordion-body">
           <strong style="font-size: 20px;">This is the second item's accordion body.</strong>
           <p style="font-size: 18px;">
-            It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the, though the transition does limit overflow.
+            It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the, though the transition does limit overflows.
           </p>
         </div>
       </div>

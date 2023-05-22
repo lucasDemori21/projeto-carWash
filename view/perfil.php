@@ -141,7 +141,7 @@ $dados_user = mysqli_fetch_array($result);
     Swal.fire({
       title: 'Atualizações de cadastro realizado com sucesso!',
       icon: 'success',
-      timer: 0
+      timer: 3000
     });
   </script>
 <?php } ?>

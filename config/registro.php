@@ -20,11 +20,11 @@ if(!empty($_POST))
         $sql = "INSERT INTO usuarios (id_user, username, email, pass_key, data_reg, sts) 
         VALUES(null,'".$username."','".$email."','".$hash_pass."', '".$data_registro."', '".$sts."');";
         $_SESSION['username'] = $username;
-        $result = mysqli_query($conn, $sql);
-        header("Location: ../login.php?login=1");
+        //$result = mysqli_query($conn, $sql);
+        //header("Location: ../login.php?login=1");
         exit;
     }else{  
-        header('Location: ../login.php?Erro=2');
+        //header('Location: ../login.php?Erro=2');
         exit;
     }
 

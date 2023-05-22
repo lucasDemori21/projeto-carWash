@@ -126,7 +126,7 @@ INSERT INTO horarios_disp(id_data, data_disp, hora_disp) VALUES
 
 INSERT INTO usuarios (id_user, cpf, data_nasc, idade, username, email, pass_key, 
 cellphone, telephone, address, number_home, complement, district, city, state, zip, 
-data_reg, sts) VALUES(null,'111.111.111-11', '2004-01-01','19', 'Joãozinho', 
+data_reg, sts) VALUES(null,'111.111.111-11', '2004-01-01','19', 'Joãozinho Paulo', 
 'cliente@gmail.com', '$2y$10$vNCgLuOiTEo1m/xSea3Ke..GSdPEKcWkWJ4phTnmYz12TRAECLBz2',
 '(99) 99999-9999', '(44) 4444-4444','Rua Claudio Lopes','1200','Casa', 'Aventureiro',
 'Joinville','SC','89225-721', '2023-05-19 15:56:05', '0');

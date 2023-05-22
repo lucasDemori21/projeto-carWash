@@ -1,6 +1,4 @@
-$('#tableServ').dataTable( {
-    "processing": true
-});
+$('#tableServ').dataTable();
 
 $(document).ready(function(){
     $('input[type="checkbox"]').on('change', function(){

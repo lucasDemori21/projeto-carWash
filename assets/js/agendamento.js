@@ -32,7 +32,7 @@ $(document).ready(function () {
     Swal.fire({
       position: 'center',
       icon: 'warning',
-      title: 'Horario indisponivel!',
+      title: 'Horario indisponivel! Escolha outro.',
       showConfirmButton: false,
       timer: 2000
     })

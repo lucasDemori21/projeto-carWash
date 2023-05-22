@@ -1,4 +1,29 @@
 
+
+function verificaPassword(){
+
+   var password = document.getElementById('passwordR').value;
+   var passwordV = document.getElementById('passwordC').value;
+   if(password === passwordV){
+    return true;
+   
+    }else{
+        document.getElementById('passwordR').focus();
+        
+        Swal.fire({
+            position: 'center',
+            icon: 'warning',
+            title: 'As senhas devem ser idênticas!',
+            text: 'Verifique suas senhas.',
+            showConfirmButton: false,
+            timer: 3000
+        })
+        console.log('false');
+        return false;
+   
+    }
+}
+
 var erro = document.getElementById('erro').value; 
 if(erro == 1){
     document.getElementById('incorrect').style.display = "block";

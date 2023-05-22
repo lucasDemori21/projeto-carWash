@@ -21,15 +21,12 @@ if ($_SESSION['permissao'] == 1){
         <tbody>
             <?php
             $i = 0;
-            $sql = 'SELECT id_agendamento, u.username, f.nome_func, c.modelo, s.servico, a.data_agen, hora_disp, a.status FROM agendamento AS a
-            INNER JOIN funcionarios AS f
-            ON a.id_func = f.id_func
-            INNER JOIN usuarios AS u
-            ON a.id_user = u.id_user
-            INNER JOIN servicos AS s
-            ON a.id_servico = s.id_servico
-            INNER JOIN carros AS c
-            ON a.id_car = c.id_car;';
+            $sql = 'SELECT id_agendamento, u.username, f.nome_func, 
+            c.modelo, s.servico, a.data_agen, hora_disp, a.status FROM agendamento AS a
+            INNER JOIN funcionarios AS f ON a.id_func = f.id_func
+            INNER JOIN usuarios AS u ON a.id_user = u.id_user
+            INNER JOIN servicos AS s ON a.id_servico = s.id_servico
+            INNER JOIN carros AS c ON a.id_car = c.id_car';
             $result = mysqli_query($conn, $sql);
             while($ag = mysqli_fetch_array($result)){
                 
@@ -50,30 +47,26 @@ if ($_SESSION['permissao'] == 1){
                     <?php
                     if($ag[7] == 1){
                     ?>
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" style="width:60px; height: 30px; margin-right: 1rem;" type="checkbox" id="flexSwitchCheckDisabled" disabled>
-                        <label class="form-check-label" for="flexSwitchCheckCheckedDisabled"></label>
-                    </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" style="width:60px; height: 30px; margin-right: 1rem;" type="checkbox" id="flexSwitchCheckDisabled" disabled>
+                            <label class="form-check-label" for="flexSwitchCheckCheckedDisabled"></label>
+                        </div>
                     <?php
                     }else{
                     ?>
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" style="width:60px; height: 30px; margin-right: 1rem;" type="checkbox" id="status_<?php echo $i; ?>" name="status">
-                        <label class="form-check-label" style="margin-top:3%;" for="flexSwitchCheckDefault"></label>
-                    </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" style="width:60px; height: 30px; margin-right: 1rem;" type="checkbox" id="status_<?php echo $i; ?>" name="status">
+                            <label class="form-check-label" style="margin-top:3%;" for="flexSwitchCheckDefault"></label>
+                        </div>
                     <?php
                     }
-                
-                ?>
-                   
-                </div>
-                </td>
-                
+                    ?>
+                </td>  
                 <?php
-            echo '</tr>';
-            $i++;
+                    echo '</tr>';
+                $i++;
             }
-            ?>
+                ?>
         </tbody>
     </table>
 </div>
@@ -81,7 +74,4 @@ if ($_SESSION['permissao'] == 1){
 
 </html>
 <script src="../assets/js/workspace.js"></script>
-
-<?php
-    }
-?>
+<?php }?>

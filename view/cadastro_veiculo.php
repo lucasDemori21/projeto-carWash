@@ -16,9 +16,6 @@ if ($_SESSION['permissao'] == 1) {
       <div class="col-md-4">
         <label for="model" class="form-label">Modelo</label>
         <input type="text" class="form-control" id="model" name="model" placeholder="Ex: Gol" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
       </div>
       <div class="col-md-2">
         <label for="mark" class="form-label">Marca</label>

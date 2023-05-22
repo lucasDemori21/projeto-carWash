@@ -5,9 +5,9 @@ if (status == 2) {
   Swal.fire({
     position: 'center',
     icon: 'warning',
-    title: 'Veículo já cadastrado!',
-    showConfirmButton: true,
-    timer: 0
+    title: 'Veículo já possui cadastro!',
+    showConfirmButton: false,
+    timer: 2000,
   })
   document.getElementById('plate').innerHTML = '';
   document.getElementById('plate').focus();

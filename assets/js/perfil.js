@@ -66,7 +66,6 @@ inputCep.addEventListener('input', () => {
         
       })
       .catch(error => {
-        console.log('Erro');
         console.log(error);
       });
   }

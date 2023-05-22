@@ -18,7 +18,6 @@ if($_POST){
 
     while($verify = mysqli_fetch_array($resultVerify)){
         if(($verify[0] == $data) && ($verify[1] == $hora)){
-            echo 'Horario indisponivel!';
             header('Location: ../view/agendamento.php?disponivel=2');        
             exit;
         }

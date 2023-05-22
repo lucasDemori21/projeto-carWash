@@ -48,12 +48,12 @@ $dados_user = mysqli_fetch_array($result);
       <input type="text" class="form-control" id="inputTelephone" name="inputTelephone" placeholder="(47) 3333-3333" maxlength="14" aria-describedby="validationServer03Feedback" required>
     </div>
     <div class="col-md-6">
-      <label for="inputPassword4" class="form-label">CRIE UMA SENHA</label>
+      <label for="inputPassword" class="form-label">CRIE UMA SENHA</label>
       <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="*********" aria-describedby="validationServer03Feedback" required>
     </div>
     <div class="col-md-6">
-      <label for="inputPassword5" class="form-label">CONFIRME SUA SENHA</label>
-      <input type="password" class="form-control" id="inputPasswordC" name="inputPassword2" placeholder="*********" aria-describedby="validationServer03Feedback" required>
+      <label for="inputPasswordV" class="form-label">CONFIRME SUA SENHA</label>
+      <input type="password" class="form-control" id="inputPasswordV" name="inputPasswordV" placeholder="*********" aria-describedby="validationServer03Feedback" required>
     </div>
     <div class="col-md-3">
       <label for="inputZip" class="form-label">CEP</label>

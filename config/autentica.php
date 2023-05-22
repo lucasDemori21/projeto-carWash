@@ -8,8 +8,7 @@ $_SESSION['id'] = "";
 $user = $_POST['userLogin'];
 $password = $_POST['passwordLogin'];
 
-$sql = "SELECT * FROM usuarios
-WHERE email = '" . $user . "';";
+$sql = "SELECT * FROM usuarios WHERE email = '" . $user . "'";
 
 $result = mysqli_query($conn, $sql);
 $verifica = mysqli_fetch_array($result);
@@ -55,5 +54,4 @@ if ($verifica2[18] == 1) {
         exit;
     }
 }
-
 ?>

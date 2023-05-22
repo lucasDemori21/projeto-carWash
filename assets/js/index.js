@@ -28,7 +28,7 @@ function confirmLogout() {
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
     cancelButtonText: 'Cancelar',
-    confirmButtonText: 'Sim, sair!',
+    confirmButtonText: 'Sim, sair',
   }).then((result) => {
     if (result.isConfirmed) {
       window.location.href = "config/logout.php";

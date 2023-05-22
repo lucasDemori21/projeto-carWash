@@ -42,7 +42,6 @@ $sql = "INSERT INTO funcionarios(
 
   if($result = mysqli_query($conn, $sql)){
        header('Location: ../view/cadastro_func.php?Status=1');
-     echo $sql;
   }
 
 

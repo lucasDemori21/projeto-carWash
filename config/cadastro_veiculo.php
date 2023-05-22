@@ -3,7 +3,7 @@ session_start();
 require_once 'conexao.php';
 
 if ($_SESSION['username'] == ''){
-    header('Location: ../login.php;');
+    header('Location: ../login.php');
 }
 
 if ($_POST) {  

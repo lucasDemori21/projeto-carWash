@@ -133,21 +133,21 @@ require_once "config/conexao.php";
                     <form action="config/autentica.php" method="post" class="login">
                         <div>
                             <div class="input-login">
-                                <label>Email</label>
+                                <label>E-mail</label>
                                 <input type="email" id="userLogin" name="userLogin" placeholder="example@gmail.com" />
                             </div>
                             <div class="input-login">
-                                <label>Password</label>
+                                <label>Senha</label>
                                 <input type="password" id="passwordLogin" name="passwordLogin" placeholder="*********" autocomplete="off"/>
                             </div>
                             <div id="incorrect" style="display: none;" class="error">
-                                <span>Incorrect password! Try again</span>
+                                <span>Senha incorreta! Tente novamente.</span>
                             </div>
                             <div id="notRegistered" style="display: none;" class="error">
-                                <span>Email address is not registered!</span>
+                                <span>Email não registrado!</span>
                             </div>
                         </div> 
-                        <button type="submit" name="login" value="Login">Login</button>
+                        <button type="submit" name="login" value="Login">Entrar</button>
                     </form>
                     <div class="register-link">
                         <a id="loginButton" href="#">Não possui uma conta? Clique aqui para se cadastrar</a>
@@ -155,31 +155,31 @@ require_once "config/conexao.php";
                 </div>
                 <div class="back" >
                     <h1 class="title">Register</h1>
-                    <form action="config/registro.php" method="post" class="login">
+                    <form action="config/registro.php" method="post" class="login" onsubmit="return verificaPassword();">
                         <div>
                             <div class="input-login">
-                                <label>User</label>
+                                <label>Nome de usuário</label>
                                 <input type="text" id="userR" name="userR" placeholder="Username" />
                             </div>
                             <div class="input-login">
-                                <label>Email</label>
+                                <label>E-mail</label>
                                 <input type="email" id="email" name="email" placeholder="example@gmail.com" />
                             </div>
                             <div class="input-login">
-                                <label>Create a password</label>
+                                <label>Crie uma senha</label>
                                 <input type="password" id="passwordR" name="passwordR" placeholder="Password" autocomplete="off"/>
                             </div>
                             <div class="input-login">
-                                <label>Confirm your password</label>
+                                <label>Confirme sua senha</label>
                                 <input type="password" id="passwordC" name="passwordC" placeholder="Password" autocomplete="off"/>
                             </div>
                             <div id="used" style="display: none;" class="error">
-                                <span>E-mail already registered!</span>
+                                <span>E-mail já registrado! Use outro.</span>
                             </div>
                             <input type="hidden" id='sts' name='sts' value="0">
                         </div>
                         
-                        <button type="submit" name="salvar" value="Register">Register</button>
+                        <button type="submit" name="salvar" value="Register">Cadastre-se</button>
                     </form>
                     <div class="register-link">
                         <a id="registerButton" href="#">Já possui uma conta? Clique aqui fazer login</a>

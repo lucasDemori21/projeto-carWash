@@ -120,15 +120,12 @@
     <?php
             $id = $_SESSION['id'];
             $i = 0;
-            $sql = 'SELECT id_agendamento, u.username, f.nome_func, c.modelo, s.servico, a.data_agen, hora_disp, a.status FROM agendamento AS a
-            INNER JOIN funcionarios AS f
-            ON a.id_func = f.id_func
-            INNER JOIN usuarios AS u
-            ON a.id_user = u.id_user
-            INNER JOIN servicos AS s
-            ON a.id_servico = s.id_servico
-            INNER JOIN carros AS c
-            ON a.id_car = c.id_car
+            $sql = 'SELECT id_agendamento, u.username, f.nome_func, 
+            c.modelo, s.servico, a.data_agen, hora_disp, a.status FROM agendamento AS a
+            INNER JOIN funcionarios AS f ON a.id_func = f.id_func
+            INNER JOIN usuarios AS u ON a.id_user = u.id_user 
+            INNER JOIN servicos AS s ON a.id_servico = s.id_servico
+            INNER JOIN carros AS c ON a.id_car = c.id_car
             WHERE status = 0';
             $result = mysqli_query($conn, $sql);
             while($ag = mysqli_fetch_array($result)){
