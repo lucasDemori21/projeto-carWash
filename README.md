@@ -21,4 +21,14 @@ Este é o repositório do projeto do Sistema Web de Lavação de Carros, uma apl
 - Servidor MySQL para armazenar o banco de dados.<br>
 - Navegador web atualizado para acessar o sistema.<br>
 
-<h3>Instalação e Configuração<h3><br>
+<h3>Instalação e Configuração<h3>
+- Clone este repositório em seu ambiente de desenvolvimento:<br>
+  git clone https://github.com/seu-usuario/nome-do-repositorio.git<br>
+- Importe o arquivo SQL fornecido no diretório database para criar a estrutura do banco de dados e inserir dados iniciais.<br>
+- Configure as informações de conexão com o banco de dados no arquivo config/conexao.php.<br>
+- Inicie o servidor web e abra o sistema no navegador:<br>
+  http://localhost/caminho-para-o-sistema<br>
+
+
+
+  
