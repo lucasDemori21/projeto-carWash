@@ -166,16 +166,13 @@
       }
     })
     .done(function(obj){
-      $('#data').empty();
-      $('#data').append('<option value="">Selecione</option>');
-
+      $('#hora').empty();
+      $('#hora').append('<option value="">Selecione</option>');
       var dados = JSON.parse(obj);
       if (dados.dados.length > 0) {
         $.each(dados.dados, function(index, dado) {
-          var horario = dado.codigo;
-            var option = '<option value="' + horario + '">' + horario + '</option>';
-            $('#data').append(option);
-          
+            var option = '<option value="' + dado + '">' + dado + '</option>';
+            $('#hora').append(option);      
         });
       }
     });
