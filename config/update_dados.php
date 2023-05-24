@@ -19,7 +19,7 @@
     $state = $_POST['inputState'];
     $email = $_POST['inputEmail'];
     $username = $_POST['inputUser'];
-    $update_pass = @$_POST['inputPassword'];
+    $update_pass = password_hash($_POST['inputPassword'], PASSWORD_DEFAULT);
     $number = $_POST['inputNumber'];
     $telephone = $_POST['inputTelephone'];
     $cellphone = $_POST['inputCellphone'];
