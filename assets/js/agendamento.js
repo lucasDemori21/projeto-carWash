@@ -38,27 +38,27 @@ $(document).ready(function () {
     })
   }
   
-      (() => {
-    'use strict'
-    const forms = document.querySelectorAll('.needs-validation')
-    Array.from(forms).forEach(form => {
-      form.addEventListener('submit', event => {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
-        form.classList.add('was-validated')
-      }, false)
-    })
-    })()
+(() => {
+'use strict'
+const forms = document.querySelectorAll('.needs-validation');
+Array.from(forms).forEach(form => {
+  form.addEventListener('submit', event => {
+    if (!form.checkValidity()) {
+      event.preventDefault()
+      event.stopPropagation()
+    }
+    form.classList.add('was-validated')
+  }, false)
+})
+})()
 
-    var hoje = new Date().toISOString().split("T")[0];
+var hoje = new Date().toISOString().split("T")[0];
 document.getElementById("data").min = hoje;
 
 function calculaIdade() {
   const data = document.getElementById('data').value;
   $.ajax({
-    url: '../assets/ajax/teste_ajax.php', 
+    url: '../assets/ajax/horarios_ajax.php', 
     method: 'post',
     data:
     {
@@ -66,13 +66,38 @@ function calculaIdade() {
     }
   })
   .done(function(obj){
-    $('#hora').empty();
+    $('#hora').removeAttr('disabled');
     $('#hora').append('<option value="">Selecione</option>');
     var dados = JSON.parse(obj);
     if (dados.dados.length > 0) {
-      $.each(dados.dados, function(index, dado) {
-          var option = '<option value="' + dado + '">' + dado + '</option>';
+      $.each(dados.dados, function(index, horario) {
+          var option = '<option value="' + horario + '">' + horario + '</option>';
           $('#hora').append(option);      
+      });
+    }
+  });
+}
+
+function carrosCadastrados(){
+  const cliente_selecionado = document.getElementById('cliente').value;
+  console.log('cliente: ' + cliente);
+  $.ajax({
+    url: '../assets/ajax/carros_cadastrados_ajax.php', 
+    method: 'get',
+    data:
+    {
+      cliente: cliente_selecionado
+    }
+  })
+  .done(function(obj){
+    $('#carro').empty();
+    $('#carro').append('<option value="">Selecione</option>');
+    var dados = JSON.parse(obj);
+    console.log(obj);
+    if (dados.carros.length > 0) {
+      $.each(dados.carros, function(index, carros) {
+          var option = '<option value="' + carros.id + '">' + carros.modelo + ' ' + carros.tipo + ' ' + carros.ano + ' - ' + carros.placa + '</option>';
+          $('#carro').append(option);      
       });
     }
   });

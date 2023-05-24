@@ -23,10 +23,24 @@ $data_registro = date('Y-m-d H:i:s');
 $status = 0;
 
 
+$sqlVerifica = "SELECT email FROM usuarios;";
+$query = mysqli_query($conn, $sqlVerifica);
+while($verifica_user = mysqli_fetch_array($query)){
+        if(in_array($email, $verifica_user)){
+            $email = '';
+        }
+}
+
+$sqlVerificaF = "SELECT email FROM funcionarios;";
+$queryF = mysqli_query($conn, $sqlVerificaF);
+while($verifica_func = mysqli_fetch_array($queryF)){
+        if(in_array($email, $verifica_func)){
+            $email = '';
+        }
+}
 
 
-
-    if($email){
+    if($email != ''){
         $sql = "INSERT INTO usuarios (id_user, cpf, data_nasc, idade, 
         username, email, pass_key, cellphone, telephone, address, 
         number_home, complement, district, city, state, zip, data_reg, sts) 

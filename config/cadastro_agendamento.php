@@ -3,7 +3,14 @@ session_start();
 require_once 'conexao.php';
 
 if($_POST){
-    $id_user = $_SESSION['id'];
+    $id_user = '';
+    if($_SESSION['permissao'] == 1){
+        $id_user = $_POST['cliente'];
+    }else{
+        $id_user = $_SESSION['id'];
+    }
+    echo 'TESTE: '.$id_user;
+
     $func = $_POST['func'];
     $carro = $_POST['carro'];
     $data = $_POST['data'];

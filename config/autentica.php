@@ -33,7 +33,6 @@ $sql2 = "SELECT * FROM funcionarios
 WHERE email = '" . $user . "';";
 $result2 = mysqli_query($conn, $sql2);
 $verifica2 = mysqli_fetch_array($result2);
-
 if ($verifica2[18] == 1) {
     if ($verifica2[2] == $user) {
         if (password_verify($password, $verifica2[8])) {
