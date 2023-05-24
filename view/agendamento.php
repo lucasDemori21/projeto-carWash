@@ -47,7 +47,7 @@
   </div>
   <div class="col-md-2">
     <label for="data" class="form-label">Data</label>
-    <input type="date" class="form-control" id="data" name="data" required>
+    <input type="date" class="form-control" id="data" name="data" onblur="calculaIdade()" required>
     
   </div>
   <div class="col-md-2">
@@ -153,4 +153,32 @@
 </body>
 </html>
 <script src="../assets/js/agendamento.js">
+</script>
+<script>
+  function calculaIdade() {
+  const data = document.getElementById('data').value;
+    $.ajax({
+      url: '../assets/ajax/teste_ajax.php', 
+      method: 'get',
+      data:
+      {
+        date: data
+      }
+    })
+    .done(function(obj){
+      $('#data').empty();
+      $('#data').append('<option value="">Selecione</option>');
+
+      var dados = JSON.parse(obj);
+      if (dados.dados.length > 0) {
+        $.each(dados.dados, function(index, dado) {
+          var horario = dado.codigo;
+            var option = '<option value="' + horario + '">' + horario + '</option>';
+            $('#data').append(option);
+          
+        });
+      }
+    });
+  }
+
 </script>

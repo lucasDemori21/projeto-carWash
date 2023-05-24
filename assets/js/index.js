@@ -42,7 +42,7 @@ window.load = graficoPizza();
 function graficoPizza() {
   $.ajax({
     method: "POST",
-    url: "assets/ajax/consulta_tabelas.php",
+    url: "assets/ajax/consulta_tabelas_ajax.php",
     success: function(obj) {
       var dados = JSON.parse(obj);
       const ctx = document.getElementById('myChart');
@@ -81,8 +81,8 @@ function graficoPizza() {
           }
         }
       });
-      $('#agendados').text("Carros agendados: " + dados.agendados);
-      $('#concluidos').text("Carros concluidos: " + dados.concluidos);
+      $('#agendados').text(" Carros agendados: " + dados.agendados);
+      $('#concluidos').text(" Carros concluidos: " + dados.concluidos);
     }
   })
 }
@@ -94,7 +94,7 @@ new Chart(ctt, {
     labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
     datasets: [{
       label: 'Faturamento Semestral',
-      data: [12, 19, 3, 5, 2, 3],
+      data: [12, 10, 14, 16, 12, 13],
       borderWidth: 1
     }]
   },

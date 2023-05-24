@@ -73,7 +73,6 @@ inputCep.addEventListener('input', () => {
 });
 
 function calculaIdade() {
-  const data = document.getElementById('dateN');
   d = document.getElementById('dateN').valueAsDate;
   const ano = d.getUTCFullYear();
   const dataAtual = new Date();
