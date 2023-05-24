@@ -336,3 +336,7 @@ offcanvas-start {
     background-color: #060524 !important;
     color: #FFF !important;
 }
+
+.form-label{
+    white-space: nowrap;
+}

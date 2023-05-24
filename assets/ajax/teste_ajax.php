@@ -2,8 +2,8 @@
 require_once '../../config/conexao.php';
 
 $teste = null;
-if($_GET['date'] != ''){
-$teste = $_GET['date'];
+if($_POST['date'] != ''){
+$teste = $_POST['date'];
 }
 
 $array_horas = array();

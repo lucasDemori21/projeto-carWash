@@ -51,3 +51,29 @@ $(document).ready(function () {
       }, false)
     })
     })()
+
+    var hoje = new Date().toISOString().split("T")[0];
+document.getElementById("data").min = hoje;
+
+function calculaIdade() {
+  const data = document.getElementById('data').value;
+  $.ajax({
+    url: '../assets/ajax/teste_ajax.php', 
+    method: 'post',
+    data:
+    {
+      date: data
+    }
+  })
+  .done(function(obj){
+    $('#hora').empty();
+    $('#hora').append('<option value="">Selecione</option>');
+    var dados = JSON.parse(obj);
+    if (dados.dados.length > 0) {
+      $.each(dados.dados, function(index, dado) {
+          var option = '<option value="' + dado + '">' + dado + '</option>';
+          $('#hora').append(option);      
+      });
+    }
+  });
+}

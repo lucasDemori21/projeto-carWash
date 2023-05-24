@@ -47,7 +47,7 @@
   </div>
   <div class="col-md-2">
     <label for="data" class="form-label">Data</label>
-    <input type="date" class="form-control" id="data" name="data" onblur="calculaIdade()" required>
+    <input type="date" class="form-control" id="data" name="data" min="" onblur="calculaIdade()" required>
     
   </div>
   <div class="col-md-2">
@@ -55,7 +55,7 @@
     <select class="form-select" id="hora" name="hora" required>
       <option selected disabled value="">Selecione</option>
             <?php 
-            $sql = "SELECT hora_disp FROM horarios_disp WHERE hora_disp NOT IN (SELECT hora_disp FROM agendamento)";
+            $sql = "SELECT hora_disp FROM horarios_disp";
             $result_hr = mysqli_query($conn, $sql);
             
             while ($hora = mysqli_fetch_array($result_hr)) {
@@ -155,27 +155,6 @@
 <script src="../assets/js/agendamento.js">
 </script>
 <script>
-  function calculaIdade() {
-  const data = document.getElementById('data').value;
-    $.ajax({
-      url: '../assets/ajax/teste_ajax.php', 
-      method: 'get',
-      data:
-      {
-        date: data
-      }
-    })
-    .done(function(obj){
-      $('#hora').empty();
-      $('#hora').append('<option value="">Selecione</option>');
-      var dados = JSON.parse(obj);
-      if (dados.dados.length > 0) {
-        $.each(dados.dados, function(index, dado) {
-            var option = '<option value="' + dado + '">' + dado + '</option>';
-            $('#hora').append(option);      
-        });
-      }
-    });
-  }
+
 
 </script>
