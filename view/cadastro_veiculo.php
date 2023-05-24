@@ -179,7 +179,7 @@ if ($_SESSION['permissao'] == 1) {
 ?>
   <div class="container-detail-table" style="background: rgba(0, 0, 0, 0.6)">
 
-    <table id="example" class="table" style="width:100%; color: white;">
+    <table id="tableVeiculos" class="table" style="width:100%; color: white;">
       <thead>
         <tr>
           <th>Código de cliente</th>
@@ -228,12 +228,7 @@ if ($_SESSION['permissao'] == 1) {
   </body>
 
   </html>
-  <script>
-    $(document).ready(function() {
-      $('#example').DataTable();
-    });
-  </script>
+  <script src="../assets/js/cadastro_veiculo.js"></script>
 <?php
 }
 ?>
-<script src="../assets/js/cadastro_veiculo.js"></script>

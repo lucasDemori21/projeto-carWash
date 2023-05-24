@@ -1,3 +1,7 @@
+$('#tableVeiculos').DataTable({
+  scrollX: true
+});
+
 var status = document.getElementById('status').value;
 
 if (status == 2) {

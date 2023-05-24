@@ -17,7 +17,7 @@ body {
 }
 
 .menuToggle {
-    position: fixed;
+    position:fixed;
     margin: 16px 0 0 50px;
 }
 .register-link a{
@@ -177,6 +177,19 @@ offcanvas-start {
     .accordion {
         margin-top: 30% !important;
         z-index: 0;
+    }
+
+    .container-detail-table{
+        margin: 10% auto 2% auto !important;
+        width: 90% !important;
+    }
+    .container-detail{
+        margin: 10% auto 2% auto !important;
+        width: 90% !important;
+    }
+    .menuToggle {
+        position:relative !important;
+        margin: 40px 0 0 50px !important;
     }
 }
 

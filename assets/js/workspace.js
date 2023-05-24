@@ -1,4 +1,6 @@
-$('#tableServ').dataTable();
+$('#tableServ').dataTable({
+    scrollX: true
+});
 
 $(document).ready(function(){
     $('input[type="checkbox"]').on('change', function(){
@@ -19,9 +21,10 @@ $(document).ready(function(){
                 style: {
                     background: "green",
                     borderRadius: "5px",
-                    width: "15%",
+                    width: "auto",
                     textAlign: "center",
-                    fontSize: "18px"
+                    fontSize: "18px",
+                    whiteSpace: "nowRap"
                 },
                 onClick: function(){}
             }).showToast();
@@ -53,9 +56,10 @@ $(document).ready(function(){
                     style: {
                         background: "red",
                         borderRadius: "5px",
-                        width: "15%",
+                        width: "auto",
                         textAlign: "center",
-                        fontSize: "18px"
+                        fontSize: "18px",
+                        whiteSpace: "nowRap"
                     },
                     onClick: function(){}
                 }).showToast();

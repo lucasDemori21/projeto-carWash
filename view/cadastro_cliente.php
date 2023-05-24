@@ -39,11 +39,11 @@ $dados_user = mysqli_fetch_array($result);
       <input type="text" class="form-control" id="idade" name="idade" readonly>
     </div>
    
-    <div class="col-3">
+    <div class="col-md-3">
       <label for="inputCellphone" class="form-label">CELULAR</label>
       <input type="text" class="form-control" id="inputCellphone" name="inputCellphone" placeholder="(47) 9 9999-9999" maxlength="15" aria-describedby="validationServer03Feedback" required>
     </div>
-    <div class="col-3">
+    <div class="col-md-3">
       <label for="inputTelephone" class="form-label">TELEFONE</label>
       <input type="text" class="form-control" id="inputTelephone" name="inputTelephone" placeholder="(47) 3333-3333" maxlength="14" aria-describedby="validationServer03Feedback" required>
     </div>

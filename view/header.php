@@ -28,10 +28,10 @@ if(!$_SESSION['username'] && !$_SESSION['id']){
 <body style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../assets/images/lindo-carro-no-servico-de-lavagem.jpg); background-size: cover;">
 
 <div class="menuToggle" style="z-index: 1;">
-    <input type="checkbox" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" style="z-index: 10000000;"/>
-    <span style="z-index: 1000000;"></span>
-    <span style="z-index: 1000000;"></span>
-    <span style="z-index: 1000000;"></span>
+  <input type="checkbox" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" style="z-index: 10000000;"/>
+  <span style="z-index: 1000000;"></span>
+  <span style="z-index: 1000000;"></span>
+  <span style="z-index: 1000000;"></span>
     <ul class="menu">
       <div class="offcanvas offcanvas-start" style="border-right: 1px solid #00E0FF;" data-bs-scroll="false" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
         <div class="offcanvas-header">

@@ -20,11 +20,10 @@ require_once "config/conexao.php";
 <body style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(assets/images/lindo-carro-no-servico-de-lavagem.jpg); background-size: cover;">
     <div class="navegacao">
         <nav class="nav-bar">
-            <a href="#" class="nav-a"><button class="nav-button">Login/Registro</button></a>
-            <a href="#" class="nav-a"><button class="nav-button" data-bs-toggle="modal" data-bs-target="#localizacao">Localização</button></a>
-            <a href="#" class="nav-a"><button class="nav-button" data-bs-toggle="modal" data-bs-target="#contato">Contato</button></a>
-            <a href="#" class="nav-a"><button class="nav-button" data-bs-toggle="modal" data-bs-target="#sobre">Sobre</button></a>
-        </nav>
+            <button class="nav-button">Login/Registro</button>
+            <button class="nav-button" data-bs-toggle="modal" data-bs-target="#localizacao">Localização</button>
+            <button class="nav-button" data-bs-toggle="modal" data-bs-target="#contato">Contato</button>
+            <button class="nav-button" data-bs-toggle="modal" data-bs-target="#sobre">Sobre</button>
         <div class="modal fade" id="localizacao" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -134,11 +133,11 @@ require_once "config/conexao.php";
                         <div>
                             <div class="input-login">
                                 <label>E-mail</label>
-                                <input type="email" id="userLogin" name="userLogin" placeholder="example@gmail.com" />
+                                <input type="email" id="userLogin" name="userLogin" placeholder="example@gmail.com" required/>
                             </div>
                             <div class="input-login">
                                 <label>Senha</label>
-                                <input type="password" id="passwordLogin" name="passwordLogin" placeholder="*********" autocomplete="off"/>
+                                <input type="password" id="passwordLogin" name="passwordLogin" placeholder="********" autocomplete="off" required/>
                             </div>
                             <div id="incorrect" style="display: none;" class="error">
                                 <span>Senha incorreta! Tente novamente.</span>
@@ -159,19 +158,19 @@ require_once "config/conexao.php";
                         <div>
                             <div class="input-login">
                                 <label>Nome de usuário</label>
-                                <input type="text" id="userR" name="userR" placeholder="Username" />
+                                <input type="text" id="userR" name="userR" placeholder="Nome de usuário" required/>
                             </div>
                             <div class="input-login">
                                 <label>E-mail</label>
-                                <input type="email" id="email" name="email" placeholder="example@gmail.com" />
+                                <input type="email" id="email" name="email" placeholder="example@gmail.com" required/>
                             </div>
                             <div class="input-login">
                                 <label>Crie uma senha</label>
-                                <input type="password" id="passwordR" name="passwordR" placeholder="Password" autocomplete="off"/>
+                                <input type="password" id="passwordR" name="passwordR" placeholder="********" autocomplete="off" required/>
                             </div>
                             <div class="input-login">
                                 <label>Confirme sua senha</label>
-                                <input type="password" id="passwordC" name="passwordC" placeholder="Password" autocomplete="off"/>
+                                <input type="password" id="passwordC" name="passwordC" placeholder="********" autocomplete="off" required/>
                             </div>
                             <div id="used" style="display: none;" class="error">
                                 <span>E-mail já registrado! Use outro.</span>

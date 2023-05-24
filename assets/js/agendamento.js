@@ -2,6 +2,7 @@ $(document).ready(function () {
     $('#table').DataTable({
       paging: false,
       info: false,
+      scrollX: true,
       searching: false,
       dom: '<"toolbar">frtip',
     });
