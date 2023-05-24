@@ -117,7 +117,7 @@ body {
 
 .offcanvas,
 offcanvas-start {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.6) !important;
     border: none;
     color: #FFF;
     backdrop-filter: blur(0.2rem);

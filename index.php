@@ -154,9 +154,7 @@ if ($_SESSION['permissao'] == 1){
 
 </body>
 </html>
-
 <script src="assets/js/index.js"></script>
-
 <?php
 }
 ?>
