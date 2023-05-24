@@ -1,5 +1,7 @@
+
 $('#tableServ').dataTable({
-    scrollX: true
+    scrollX: true,
+    order: [6, 'desc']
 });
 
 $(document).ready(function(){
@@ -63,6 +65,7 @@ $(document).ready(function(){
                     },
                     onClick: function(){}
                 }).showToast();
+                
             });
         }
     });
