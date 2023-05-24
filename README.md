@@ -27,8 +27,8 @@ Este é o repositório do projeto do Sistema Web de Lavação de Carros, uma apl
 <h3>Instalação e Configuração</h3>
 
 - Clone este repositório em seu ambiente de desenvolvimento:<br>
-  git clone https://github.com/seu-usuario/nome-do-repositorio.git
-- Importe o arquivo SQL fornecido no diretório database para criar a estrutura do banco de dados e inserir dados iniciais.
+  git clone https://github.com/lucasDemori21/projeto-carWash.git
+- Importe o arquivo SQL fornecido no diretório SQL para criar a estrutura do banco de dados e inserir dados iniciais.
 - Configure as informações de conexão com o banco de dados no arquivo config/conexao.php.
 - Inicie o servidor web e abra o sistema no navegador:<br>
   http://localhost/caminho-para-o-sistema
