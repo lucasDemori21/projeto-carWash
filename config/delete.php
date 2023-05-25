@@ -10,6 +10,7 @@ $sql = 'DELETE FROM agendamento WHERE id_agendamento = "' . $delete . '"';
 
 if($result = mysqli_query($conn, $sql)){
     header('Location: ../view/agendamento.php');
+    exit;
 }
 
 ?>

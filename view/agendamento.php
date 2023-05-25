@@ -155,11 +155,8 @@ if ($_SESSION['permissao'] == 1){
                 Agendado
                 </td>
                 <td>
-                <a href="../config/delete.php?delete=<?php echo $ag[0];?>">
-                  <button type="button" class="btn btn-danger" style="font-size: 12px;" class="myButton">CANCELAR</button>
-                </a>
+                  <button type="button" class="btn btn-danger" onclick="cancelarAgendamento(<?php echo $ag[0]?>)" style="font-size: 12px;" class="myButton">CANCELAR</button>
                 </td>
-                
                 <?php
             echo '</tr>';
             $i++;
