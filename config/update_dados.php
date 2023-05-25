@@ -19,7 +19,10 @@
     $state = $_POST['inputState'];
     $email = $_POST['inputEmail'];
     $username = $_POST['inputUser'];
-    $update_pass = password_hash($_POST['inputPassword'], PASSWORD_DEFAULT);
+    $update_pass = '';
+    if($_POST['inputPassword'] != ''){
+        $update_pass = password_hash($_POST['inputPassword'], PASSWORD_DEFAULT);
+    }
     $number = $_POST['inputNumber'];
     $telephone = $_POST['inputTelephone'];
     $cellphone = $_POST['inputCellphone'];
@@ -48,7 +51,7 @@
 
     if ($email != '') {
         $sql = " UPDATE usuarios
-    SET email = '" . $username . "' 
+    SET email = '" . $email . "' 
     WHERE id_user = " . $id_user . " ";  
     mysqli_query($conn, $sql);
     }
@@ -57,69 +60,74 @@
         $sql = " UPDATE usuarios
     SET username = '" . $username . "' 
     WHERE id_user = " . $id_user . " ";
-        mysqli_query($conn, $sql);
+    mysqli_query($conn, $sql);
+    $_SESSION['username'] = "";
+    $_SESSION['username'] = $username;
     }
     
     if($update_pass != ''){
         $sql = " UPDATE usuarios
     SET pass_key = '" . $update_pass . "' 
     WHERE id_user = " . $id_user . " ";
-        mysqli_query($conn, $sql);
+    mysqli_query($conn, $sql);
     }
 
     if ($address != '') {
         $sql = " UPDATE usuarios
     SET address = '" . $address . "' 
     WHERE id_user = " . $id_user . " ";
-      
     mysqli_query($conn, $sql);
-
     }
+
     if ($number != '') {
         $sql = " UPDATE usuarios
     SET number_home = '" . $number . "' 
     WHERE id_user = " . $id_user . " ";
-    echo $sql; 
     mysqli_query($conn, $sql);
     }
+
     if ($district != '') {
         $sql = " UPDATE usuarios
     SET district = '" . $district . "' 
     WHERE id_user = " . $id_user . " ";  
     mysqli_query($conn, $sql);
     }
+
     if ($complement != '') {
         $sql = " UPDATE usuarios
     SET complement = '" . $complement . "' 
     WHERE id_user = " . $id_user . " ";  
     mysqli_query($conn, $sql);
     }
+
     if ($telephone != '') {
         $sql = " UPDATE usuarios
     SET telephone = '" . $telephone . "' 
     WHERE id_user = " . $id_user . " ";
-    echo $sql; 
     mysqli_query($conn, $sql);
     }
+
     if ($cellphone != '') {
         $sql = " UPDATE usuarios
     SET cellphone = '" . $cellphone . "' 
     WHERE id_user = " . $id_user . " ";
-    echo $sql; 
     mysqli_query($conn, $sql);
     }
+
     if ($city != '') {
         $sql = " UPDATE usuarios
     SET city = '" . $city . "' 
     WHERE id_user = " . $id_user . " ";  
     mysqli_query($conn, $sql);
     }
+
     if ($state != '') {
         $sql = " UPDATE usuarios
     SET state = '" . $state . "' 
     WHERE id_user = " . $id_user . " ";  
     mysqli_query($conn, $sql);
     }
+
     if ($zip != '') {
         $sql = " UPDATE usuarios
     SET zip = '" . $zip . "' 

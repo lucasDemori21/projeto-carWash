@@ -121,6 +121,7 @@ if ($_SESSION['permissao'] == 1){
         <th>Data</th>
         <th>Horario</th>
         <th>Status</th>
+        <th>###</th>
       </tr>
     </thead>
     <tbody>
@@ -134,6 +135,11 @@ if ($_SESSION['permissao'] == 1){
             INNER JOIN servicos AS s ON a.id_servico = s.id_servico
             INNER JOIN carros AS c ON a.id_car = c.id_car
             WHERE status = 0';
+
+            if($_SESSION['permissao'] == 0){
+              $sql .= " AND u.id_user = '" . $id . "'";
+            }
+
             $result = mysqli_query($conn, $sql);
             while($ag = mysqli_fetch_array($result)){
               echo '<tr>';
@@ -147,6 +153,11 @@ if ($_SESSION['permissao'] == 1){
                 <td><?php echo $ag[6]; ?></td>
                 <td>
                 Agendado
+                </td>
+                <td>
+                <a href="../config/delete.php?delete=<?php echo $ag[0];?>">
+                  <button type="button" class="btn btn-danger" style="font-size: 12px;" class="myButton">CANCELAR</button>
+                </a>
                 </td>
                 
                 <?php

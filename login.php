@@ -137,7 +137,7 @@ require_once "config/conexao.php";
                             </div>
                             <div class="input-login">
                                 <label>Senha</label>
-                                <input type="password" id="passwordLogin" name="passwordLogin" placeholder="********" autocomplete="off" required/>
+                                <input type="password" id="passwordLogin" name="passwordLogin" placeholder="********" autocomplete="off"/>
                             </div>
                             <div id="incorrect" style="display: none;" class="error">
                                 <span>Senha incorreta! Tente novamente.</span>

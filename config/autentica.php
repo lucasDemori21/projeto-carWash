@@ -8,15 +8,16 @@ $_SESSION['id'] = "";
 $user = $_POST['userLogin'];
 $password = $_POST['passwordLogin'];
 
-$sql = "SELECT * FROM usuarios WHERE email = '" . $user . "'";
+$sql = "SELECT * FROM usuarios 
+WHERE email = '" . $user . "'";
 
 $result = mysqli_query($conn, $sql);
 $verifica = mysqli_fetch_array($result);
 
 if (!empty($verifica) && ($verifica[17] == 0)) {
-    echo 'entrou user';
     if ($verifica[5] == $user) {
         if (password_verify($password, $verifica[6])) {
+            echo $sql;
             $_SESSION['id'] = $verifica[0];
             $_SESSION['permissao'] = $verifica2[17];
             $_SESSION['username'] = $verifica[4];

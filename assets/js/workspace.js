@@ -34,6 +34,7 @@ $(document).ready(function(){
         } else if((status == 0) && (verifica == 1)){
             $("#line-"+line_id).css("background-color", "rgba(163, 0, 0, 0.3)");
             $("#status_"+line_id).attr('disabled', 'disabled');
+            $("#stsAgen").text('Feito');
             var id_agendamento = document.getElementById('user-'+line_id).value;  
             $.ajax({
                 method: "POST",

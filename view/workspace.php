@@ -57,7 +57,7 @@ if ($_SESSION['permissao'] == 1){
                     ?>
                         <div class="form-check form-switch">
                             <input class="form-check-input" style="width:60px; height: 30px; margin-right: 1rem;" type="checkbox" id="status_<?php echo $i; ?>" name="status">
-                            <label class="form-check-label" style="margin-top:3%;" for="flexSwitchCheckDefault">Não feito</label>
+                            <label class="form-check-label" style="margin-top:3%;" for="flexSwitchCheckDefault" id="stsAgen">Não feito</label>
                         </div>
                         
                     <?php

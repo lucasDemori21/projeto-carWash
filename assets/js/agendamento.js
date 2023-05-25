@@ -1,11 +1,12 @@
 $(document).ready(function () {
-    $('#table').DataTable({
+    var table = $('#table').DataTable({
       paging: false,
       info: false,
       scrollX: true,
       searching: false,
       dom: '<"toolbar">frtip',
     });
+    
     $('div.toolbar').html('<h3>Seus agendamentos</h3>');
   });
   
@@ -103,3 +104,24 @@ function carrosCadastrados(){
     }
   });
 }
+
+// function cancelarAgendamento(){
+//   Swal.fire({
+//     title: 'Tem certeza?',
+//     text: "Você será desconectado da página!",
+//     icon: 'warning',
+//     showCancelButton: true,
+//     confirmButtonColor: '#3085d6',
+//     cancelButtonColor: '#d33',
+//     cancelButtonText: 'Cancelar',
+//     confirmButtonText: 'Sim, sair!',
+//   }).then((result) => {
+//     if (result.isConfirmed) {
+//       $.ajax({
+//         method: 'post',
+//         url:
+//       })
+//     }
+//   });
+//   return false;
+// }
