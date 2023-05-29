@@ -15,7 +15,7 @@ if (login == 2) {
     icon: 'success',
     title: 'Login realizado com sucesso!',
     showConfirmButton: false,
-    timer: 2000
+    timer: 2500
   })
 }
 
