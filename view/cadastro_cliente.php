@@ -1,18 +1,6 @@
 <?php
-
 require_once 'header.php';
-require_once 'header.php';
-require_once '../config/conexao.php';
-
-$username = $_SESSION['username'];
-
-$sql = "SELECT * FROM usuarios
-WHERE username = '" . $username . "' ";
-
-$result = mysqli_query($conn, $sql);
-$dados_user = mysqli_fetch_array($result);
-
-    ?>
+?>
     
     <div class="container-detail">
     <h1 class='title'>CADASTRO DE CLIENTE</h1>
@@ -82,13 +70,7 @@ $dados_user = mysqli_fetch_array($result);
     <div class="col-md-3">
       <label for="inputState" class="form-label">ESTADO</label>
       <select class="form-select" id="inputState" name="inputState" aria-describedby="validationServer04Feedback" required>
-        <?php
-        if ($dados_user[14]) {
-          echo '<option value="">' . $dados_user[14] . '</option>';
-        } else {
-          echo '<option value="" disabled>Selecione</option>';
-        }
-        ?>
+        <option value="" disabled selected>Selecione</option>;
         <option value="AC">AC</option>
         <option value="AL">AL</option>
         <option value="AP">AP</option>

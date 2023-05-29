@@ -136,13 +136,4 @@ $dados_user = mysqli_fetch_array($result);
 </body>
 
 </html>
-<?php if (isset($_GET['update']) && $_GET['update'] == 1) { ?>
-  <script>
-    Swal.fire({
-      title: 'Atualizações de cadastro realizado com sucesso!',
-      icon: 'success',
-      timer: 3000
-    });
-  </script>
-<?php } ?>
 <script src="../assets/js/perfil.js"></script>

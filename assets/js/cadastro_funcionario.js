@@ -1,3 +1,18 @@
+if ($_GET['Status'] == 1) { 
+  Swal.fire({
+  title: 'Cadastro de funcionario realizado com sucesso!',
+  icon: 'success',
+  timer: 0
+  });
+}else if ($_GET['Status'] == 2) { 
+  Swal.fire({
+  title: 'Erro ao cadastrar funcionario!',
+  text: 'Email já cadastrado.',
+  icon: 'error',
+  timer: 0
+  });
+} 
+
 $('#inputSalario').mask('#.##0,00', { reverse: true });
 (() => {
   'use strict'

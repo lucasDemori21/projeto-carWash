@@ -1,8 +1,7 @@
 <?php 
 session_start(); 
 if(!$_SESSION['username'] && !$_SESSION['id']){
-  $status = 1;
-  header('Location: ../login.php?Erro='. $status);
+  header('Location: ../login.php?Erro=1');
   exit;
 }
 ?>

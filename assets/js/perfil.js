@@ -1,3 +1,11 @@
+if (isset($_GET['update']) && $_GET['update'] == 1) { 
+  Swal.fire({
+    title: 'Atualizações de cadastro realizado com sucesso!',
+    icon: 'success',
+    timer: 3000
+  });
+} 
+
 (() => {
     'use strict'
     const forms = document.querySelectorAll('.needs-validation')

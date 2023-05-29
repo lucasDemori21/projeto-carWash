@@ -157,15 +157,4 @@ $dados_user = mysqli_fetch_array($result);
 </body>
 
 </html>
-
-<?php if (isset($_GET['Status']) && $_GET['Status'] == 1) { ?>
-        <script>
-            Swal.fire({
-            title: 'Cadastro de funcionario realizado com sucesso!',
-            icon: 'success',
-            timer: 0
-            });
-        </script>
-<?php } ?>
-
 <script src="../assets/js/cadastro_funcionario.js"></script>

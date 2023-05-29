@@ -1,3 +1,19 @@
+if ($_GET['cadastro'] == 1) { 
+  Swal.fire({
+  title: 'Cadastro de cliente realizado com sucesso!',
+  icon: 'success',
+  timer: 0
+  });
+}else if ($_GET['cadastro'] == 2){ 
+  Swal.fire({
+  title: 'Erro ao fazer cadastro do cliente!',
+  text: 'Email já cadastrado.',
+  icon: 'error',
+  timer: 3000
+  }); 
+  document.getElementById("inputEmail").focus();
+}
+
 (() => {
   'use strict'
   const forms = document.querySelectorAll('.needs-validation')
