@@ -112,11 +112,12 @@ $permissao = mysqli_fetch_array($result);
           <th>Marca</th>
           <th>Placa</th>
           <th>Ano</th>
+          <th>...</th>
         </tr>
       </thead>
       <tbody>
         <?php
-        $sqlCadastros = "SELECT u.id_user AS id, u.username AS nome, c.modelo AS modelo, 
+        $sqlCadastros = "SELECT c.id_car AS carro, u.id_user AS id, u.username AS nome, c.modelo AS modelo, 
             c.marca AS marca, c.placa AS placa, c.ano AS ano FROM usuarios AS u 
             INNER JOIN carros AS c ON (u.id_user = c.id_user)";
 
@@ -135,6 +136,9 @@ $permissao = mysqli_fetch_array($result);
             <td><?php echo $preencher['marca']; ?></td>
             <td><?php echo $preencher['placa']; ?></td>
             <td><?php echo $preencher['ano']; ?></td>
+            <td>
+              <button type="button" class="btn btn-danger" onclick="excluirVeiculo(<?php echo $preencher['carro']?>)" style="font-size: 12px;" class="myButton">EXCLUIR VEÍCULO</button>
+            </td>
           </tr>
         <?php
         }

@@ -1,7 +1,6 @@
 <?php
     require_once '../config/conexao.php';
     require_once 'header.php';
-
 ?>
 
 <div class="container-detail">
@@ -121,7 +120,7 @@ if ($_SESSION['permissao'] == 1){
         <th>Data</th>
         <th>Horario</th>
         <th>Status</th>
-        <th>###</th>
+        <th>...</th>
       </tr>
     </thead>
     <tbody>

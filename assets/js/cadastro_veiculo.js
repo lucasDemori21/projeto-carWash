@@ -1,8 +1,35 @@
+function excluirVeiculo(id){
+  Swal.fire({
+    title: 'Você ter certeza que deseja excluir o cadastro de seu veículo?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    cancelButtonText: 'Não',
+    confirmButtonText: 'Sim',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      window.location.href = '../config/delete_car.php?delete=' + id ;
+    }
+  });
+  return false;
+}
+
 $('#tableVeiculos').DataTable({
   scrollX: true
 });
 
 var status = document.getElementById('status').value;
+
+if (status == 3) {
+  Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: 'Veículo excluido com sucesso!',
+    showConfirmButton: false,
+    timer: 2000
+  })
+}
 
 if (status == 2) {
 
@@ -25,7 +52,6 @@ if (status == 1) {
     timer: 2000
   })
 }
-
 
 (() => {
   'use strict'
